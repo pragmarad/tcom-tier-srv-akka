@@ -1,7 +1,7 @@
 <?cass version="1.0" encoding="UTF-8"?>
 
 <configuration>
-    <property name="FILE_PREFIX_PATH" value="target/logs/tcp_akka_server.tests" />
+    <property name="FILE_PREFIX_PATH" value="target/logs/tcp_akka_server.tests"/>
     <!-- ============================ -->
     <!-- Appenders -->
 

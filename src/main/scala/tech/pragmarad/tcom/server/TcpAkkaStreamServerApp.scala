@@ -13,6 +13,7 @@ import scala.util.Try
 /**
  * Tcp server app starter.<br>
  * This app accepts arguments: srvhost,srvport
+ *
  * @author pragmarad
  * @since 2020-03-09
  */
@@ -34,7 +35,7 @@ object TcpAkkaStreamServerApp {
    *
    * @param args
    */
-  def main(args: Array[String]):Unit = appCommand.parse(args, sys.env) match {
+  def main(args: Array[String]): Unit = appCommand.parse(args, sys.env) match {
     case Left(help) => {
       System.err.println(s"Args << ${args}>> could not be parsed.\n ${help}")
       sys.exit(1)
@@ -52,6 +53,7 @@ object TcpAkkaStreamServerApp {
 
       // Variations of logic:
       val flowLogic = Flow[ByteString]
+      // TODO: introduce flow strategy with providing different ways to stream responses back (multiplied, with errors, timeouts)
 
       // Now start a server:
       // Now, let's start a server:

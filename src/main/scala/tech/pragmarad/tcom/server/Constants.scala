@@ -2,6 +2,7 @@ package tech.pragmarad.tcom.server
 
 /**
  * Component constants
+ *
  * @author pragmarad
  * @since 2020-03-09
  */
