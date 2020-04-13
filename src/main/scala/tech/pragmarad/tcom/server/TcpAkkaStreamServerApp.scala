@@ -42,10 +42,13 @@ object TcpAkkaStreamServerApp {
     }
     case Right(appOptions) => {
       logger.info("TcpServer starting with options '{}'..", appOptions)
+      val configFileNameFromSysProps = System.getProperty(ConfigCommonConstants.Default.CONFIG_FILE_SYS_PROP_NAME)
+      logger.info(" o configFileNameFromSysProps: {}",configFileNameFromSysProps)
 
       // Extract Actor system name:
       val actorSysNameFromConf = cfg.getString(Constants.PropNames.ACTOR_SYSTEM_NAME)
       val actorSysName = StringUtil.getValueWithDefaultFallback(actorSysNameFromConf, Constants.Default.ACTOR_SYSTEM_NAME)
+      logger.info(" o actorSysName: {}",actorSysName)
 
       // Extract options:
       val srvHost = appOptions._1
